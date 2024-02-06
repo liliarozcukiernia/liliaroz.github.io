@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- kodowanie znaków, możemy używać polskich znaków -->
+    <meta charset="UTF-8">
+    <!-- sposób wyświetlania na urządzeniach mobilnych -->
+    <meta name="vewport" content="width=device-width, initial-scale=1.0"> 
+    <!-- tytuł stron. m.in. w wynikach wyszukiwania--> 
+    <title>Lilia Róż</title>
+       <!-- importujemy czcionkę, żeby jej użyć --> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel= "stylesheet" href= "styl.css">
+    
+<div id="kalendarz"></div>
+
+<script>
+    
+    const kalendarz = document.getElementById('kalendarz');
+  	const data = new Date();
+  	let dzien = data.getDate(); //getDay() zwraza dzięń tygodnia a getDate() zwraca dzień miesiąca.
+    let miesiac = data.getMonth() + 1; //numery miesięcy są liczone w JS'ie on zera, a nie od jedynki.
+  	let rok = data.getFullYear();
+  
+  kalendarz.innerHTML = dzien + "-" + miesiac + "-" + rok;
+  
+  pobierzCzas();
+  	
+</script>
+<div id="zegar"></div>
+
+<script>
+    const pobierzCzas = () => {
+      	const data = new Date();
+        let godzina = data.getHours();
+        let minuta = data.getMinutes();
+        let sekunda = data.getSeconds();
+        zegar.innerHTML = godzina + ":" + minuta + ":" + sekunda;
+    }
+    const zegar = document.getElementById('zegar');
+  	
+  
+  const interval = setInterval(pobierzCzas,1000);
+  	
+</script>
+</head>    
+<body>
+    <div id="wrapper">
+    <header>
+        <img class="logo" src="bialy.png" alt="LOGO5.png - header" />
+    </header>
+        
+    <nav>
+        <a class="menu" href="index.html">O NAS</a>
+        <a class="menu" href="Nasze%20wypieki.html">TORTY</a>
+        <a class="menu" href="Desery.html">BABECZKI</a>
+        <a class="menu" href="Zam%C3%B3w.html">ZAMÓW</a>
+        
+        
+    </nav> 
+        
+    <section>
+     <p>🍰 JESTEŚMY CZYNNI CODZIENNIE 7.30- 18.30 🍰</p>
+        
+<p> Złóż zamówienie na numer:</p>
+        <p>Telefon: +1 (234) 567-8910</p>
+        <p>Poczta: kontakt@liliaróż.pl</p>
+        <p>🍰 Właściciel Lilia róż: Sara Becker- Daab</p>
+        
+    </section>
+  
+        <footer>🍰 Dziękujemy za odwiedziny 🍰</footer>
+    
+       </div>
+   </body>
+</html>
+
+
+                                        
